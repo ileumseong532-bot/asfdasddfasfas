@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETHEREAL — 당신의 아침을 여는 고요한 럭셔리</title>
+<meta name="description" content="ETHEREAL. 과학과 하이패션 미니멀리즘의 시선으로 정제한 스킨케어 에디토리얼.">
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<header class="site-header is-hero-dark">
+  <div class="container">
+    <a href="#" class="logo">Ethereal</a>
+
+    <nav class="main-nav">
+      <a href="#!home:curation" class="link-underline">컬렉션</a>
+      <a href="#!about" class="link-underline">브랜드 소개</a>
+      <a href="#!store" class="link-underline">스토어</a>
+      <a href="#!journal" class="link-underline">저널</a>
+    </nav>
+
+    <div class="header-icons">
+      <button type="button" aria-label="검색">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button type="button" aria-label="장바구니">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      </button>
+      <button type="button" aria-label="마이페이지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.6-3.6 4.6-5.4 7.5-5.4S17.9 16.4 19.5 20"/></svg>
+      </button>
+      <button type="button" class="nav-toggle" aria-label="메뉴">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <ul class="mobile-nav-main">
+        <li><a href="#!home:curation">컬렉션</a></li>
+        <li><a href="#!about">브랜드 소개</a></li>
+        <li><a href="#!store">스토어</a></li>
+        <li><a href="#!journal">저널</a></li>
+        <li><a href="#!checkout">주문 / 결제</a></li>
+      </ul>
+
+      <div class="mobile-nav-section">
+        <h6>바로가기</h6>
+        <div class="mobile-quick-links">
+          <button type="button" class="mobile-quick-link" data-quick="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            검색
+          </button>
+          <button type="button" class="mobile-quick-link" data-quick="mypage">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.6-3.6 4.6-5.4 7.5-5.4S17.9 16.4 19.5 20"/></svg>
+            마이페이지
+          </button>
+          <button type="button" class="mobile-quick-link" data-quick="cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            장바구니
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-nav-section">
+        <h6>최근 저널</h6>
+        <ul class="mobile-list">
+          <li><a href="#!journal:grid"><img src="https://images.unsplash.com/photo-1643168343279-3f93c2e592ef?auto=format&fit=crop&w=160&q=70" alt=""><span>레이어링의 순서가 결과를 바꾼다</span></a></li>
+          <li><a href="#!journal:grid"><img src="https://images.unsplash.com/photo-1629380108599-ea06489d66f5?auto=format&fit=crop&w=160&q=70" alt=""><span>그라스에서 온 편지</span></a></li>
+          <li><a href="#!journal:grid"><img src="https://images.unsplash.com/photo-1585832622886-272fb3a927e0?auto=format&fit=crop&w=160&q=70" alt=""><span>조향사 클레어와의 대화</span></a></li>
+          <li><a href="#!journal:grid"><img src="https://images.unsplash.com/photo-1575330933415-cea1e7ce53eb?auto=format&fit=crop&w=160&q=70" alt=""><span>성분표 읽는 법, 세 가지 원칙</span></a></li>
+        </ul>
+      </div>
+
+      <div class="mobile-nav-section">
+        <h6>인기 상품</h6>
+        <ul class="mobile-list">
+          <li><a href="#!home:curation"><img src="https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=160&q=70" alt=""><span>엘리멘탈 미스트 No. 1</span><em>82,000원</em></a></li>
+          <li><a href="#!home:curation"><img src="https://images.unsplash.com/photo-1755699192991-1f49f76a8f0d?auto=format&fit=crop&w=160&q=70" alt=""><span>나이트 리페어 컴플렉스</span><em>120,000원</em></a></li>
+          <li><a href="#!home:curation"><img src="https://images.unsplash.com/photo-1630398777649-cdfc7c5e8a24?auto=format&fit=crop&w=160&q=70" alt=""><span>스컬프팅 리추얼 키트</span><em>68,000원</em></a></li>
+        </ul>
+      </div>
+
+      <div class="mobile-nav-section">
+        <h6>매장 찾기</h6>
+        <ul class="mobile-list mobile-list-plain">
+          <li><a href="#!store:locator">청담 플래그십 — 서울 강남구</a></li>
+          <li><a href="#!store:locator">더현대 서울 — 서울 영등포구</a></li>
+          <li><a href="#!store:locator">신세계 센텀시티 — 부산 해운대구</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="appMain">
+<section class="page-view is-active" data-view="home" id="view-home">
+<!-- ================= HERO SLIDER ================= -->
+<section class="hero" data-hero id="hero-home">
+  <div class="hero-slides">
+    <div class="hero-slide is-active pan-right">
+      <img src="https://images.unsplash.com/photo-1770301410072-f6ef6dad65b2?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 골드 캡 향수 보틀 에디토리얼">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1754578645612-850d520385a8?auto=format&fit=crop&w=1920&q=80" alt="골드 실크 위에 놓인 ETHEREAL 향수 보틀">
+    </div>
+    <div class="hero-slide pan-center">
+      <img src="https://images.unsplash.com/photo-1605463967516-b73a52062ab0?auto=format&fit=crop&w=1920&q=80" alt="화이트 텍스타일 위 골드 향수 보틀">
+    </div>
+    <div class="hero-slide pan-right">
+      <img src="https://images.unsplash.com/photo-1680503504111-1bbc7fc2103e?auto=format&fit=crop&w=1920&q=80" alt="페데스탈 위에 놓인 ETHEREAL 향수 보틀">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1739190940453-20900e9d18fb?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 향수 보틀 클로즈업">
+    </div>
+  </div>
+  <div class="hero-burst"></div>
+  <div class="hero-flash"></div>
+
+  <div class="hero-content container">
+    <p class="eyebrow">에디토리얼 컬렉션 · 2026</p>
+    <h1 class="hero-title">고요함 속에서<br><em>빛나는</em> 것들</h1>
+    <p class="hero-desc">피부 본연의 빛을 깨우는 시간. 에테리얼의 과학과 하이패션 미니멀리즘의 시선으로 정제한 스킨케어 에디토리얼을 만나보세요.</p>
+    <div class="hero-actions">
+      <button type="button" class="btn btn-solid"
+        data-modal-eyebrow="컬렉션"
+        data-modal-title="시즌 컬렉션을 미리 만나보세요"
+        data-modal-body="엘리멘탈 미스트부터 나이트 리페어 컴플렉스까지, 이번 시즌 에테리얼이 제안하는 다섯 가지 시그니처 제품을 큐레이션했습니다. 지금 컬렉션 섹션에서 전체 라인업을 확인해보세요."
+        data-modal-cta-text="컬렉션으로 이동"
+        data-modal-cta-href="#curation">컬렉션 살펴보기</button>
+      <button type="button" class="btn btn-ghost-light"
+        data-modal-eyebrow="브랜드 이야기"
+        data-modal-title="에테리얼이 걸어온 길"
+        data-modal-body="2024년, 우리는 아름다움이 의도적이어야 한다는 믿음 하나로 에테리얼을 시작했습니다. 과학적 근거와 하이패션 미니멀리즘이 만나는 지점에서, 절제된 스킨케어 루틴을 제안합니다."
+        data-modal-cta-text="브랜드 소개 전체 보기"
+        data-modal-cta-href="#!about">브랜드 이야기</button>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue">스크롤</div>
+
+  <div class="hero-foot container">
+    <div class="hero-progress" role="tablist" aria-label="슬라이드 진행">
+      <button class="hero-dot is-active" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+    </div>
+    <div class="hero-count"><span class="hero-count-current">01</span> / 05</div>
+    <div class="hero-nav-btns">
+      <button class="hero-arrow prev" type="button" aria-label="이전 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero-arrow next" type="button" aria-label="다음 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRAND PHILOSOPHY ================= -->
+<section class="philosophy" id="philosophy-home">
+  <div class="container">
+    <div class="philosophy-text reveal">
+      <p class="eyebrow">브랜드 철학</p>
+      <h2>당신의 아침을 여는<br>고요한 럭셔리</h2>
+      <p>우리는 아름다움이 의도적이어야 하며 압도적이지 않아야 한다고 믿습니다. 에테리얼 에디토리얼은 과학에 기반하고 하이패션 미니멀리즘의 렌즈를 통해 정제된 스킨케어 필수품 모음입니다.</p>
+      <a href="#" class="link-underline">브랜드 더 알아보기</a>
+    </div>
+
+    <div class="philosophy-visual reveal">
+      <img src="https://images.unsplash.com/photo-1751131964776-57e3cbca0a14?auto=format&fit=crop&w=1400&q=80" alt="ETHEREAL 제품 컬렉션 에디토리얼 촬영">
+      <div class="visual-frame"></div>
+      <div class="philosophy-visual-text">
+        <span class="wordmark">Ethereal</span>
+        <span class="tagline">당신 안의 에테리얼한 아름다움을 믿다</span>
+        <span class="divider"></span>
+        <p class="caption">피부 본연의 빛을 깨우는 시간<br>에테리얼의 과학, 아름다움의 본질을 담다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CURATION / SEASONAL PICKS ================= -->
+<section class="curation" id="curation">
+  <div class="container">
+    <div class="curation-head reveal">
+      <div>
+        <p class="eyebrow">큐레이션</p>
+        <h2>시즌별 추천 제품</h2>
+      </div>
+      <div class="curation-nav">
+        <button class="prev" type="button" aria-label="이전 상품">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="next" type="button" aria-label="다음 상품">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-track reveal-stagger" data-product-track>
+      <article class="product-card">
+        <div class="product-thumb">
+          <img src="https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=900&q=80" alt="엘리멘탈 미스트 No.1">
+          <button type="button" class="product-quickadd" data-product-name="엘리멘탈 미스트 No.1" data-product-price="82000" data-product-img="https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=200&q=80">바구니에 담기</button>
+        </div>
+        <div class="product-info">
+          <h3>엘리멘탈 미스트 No. 1</h3>
+          <span class="price">82,000원</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb">
+          <img src="https://images.unsplash.com/photo-1622618991227-412b19e4fef9?auto=format&fit=crop&w=900&q=80" alt="보태니컬 밤">
+          <button type="button" class="product-quickadd" data-product-name="보태니컬 밤" data-product-price="45000" data-product-img="https://images.unsplash.com/photo-1622618991227-412b19e4fef9?auto=format&fit=crop&w=200&q=80">바구니에 담기</button>
+        </div>
+        <div class="product-info">
+          <h3>보태니컬 밤</h3>
+          <span class="price">45,000원</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb">
+          <img src="https://images.unsplash.com/photo-1630398777649-cdfc7c5e8a24?auto=format&fit=crop&w=900&q=80" alt="스컬프팅 리추얼 키트">
+          <button type="button" class="product-quickadd" data-product-name="스컬프팅 리추얼 키트" data-product-price="68000" data-product-img="https://images.unsplash.com/photo-1630398777649-cdfc7c5e8a24?auto=format&fit=crop&w=200&q=80">바구니에 담기</button>
+        </div>
+        <div class="product-info">
+          <h3>스컬프팅 리추얼 키트</h3>
+          <span class="price">68,000원</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb">
+          <img src="https://images.unsplash.com/photo-1755699192991-1f49f76a8f0d?auto=format&fit=crop&w=900&q=80" alt="나이트 리페어 컴플렉스">
+          <button type="button" class="product-quickadd" data-product-name="나이트 리페어 컴플렉스" data-product-price="120000" data-product-img="https://images.unsplash.com/photo-1755699192991-1f49f76a8f0d?auto=format&fit=crop&w=200&q=80">바구니에 담기</button>
+        </div>
+        <div class="product-info">
+          <h3>나이트 리페어 컴플렉스</h3>
+          <span class="price">120,000원</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHIVE STUDIO / CREATOR ================= -->
+<section class="creator">
+  <div class="container">
+    <div class="creator-portrait reveal">
+      <img class="img-bg" src="https://images.unsplash.com/photo-1611702817692-ee0591608901?auto=format&fit=crop&crop=faces&w=200&q=40" alt="">
+      <img class="img-fg" src="https://images.unsplash.com/photo-1611702817692-ee0591608901?auto=format&fit=crop&crop=faces&w=1200&q=80" alt="아카이브 스튜디오 크리에이티브 리드 엘레나 아리스">
+      <div class="portrait-frame"></div>
+      <span class="portrait-tag">Archive Studio — Paris / Seoul</span>
+    </div>
+
+    <div class="creator-body reveal">
+      <p class="eyebrow">크리에이터 소개</p>
+      <h2>아카이브 스튜디오</h2>
+
+      <div class="creator-meta">
+        <div>
+          <h6>크리에이티브 리드</h6>
+          <p>엘레나 아리스</p>
+        </div>
+        <div>
+          <h6>위치</h6>
+          <p>서울 / 파리</p>
+        </div>
+      </div>
+
+      <p class="creator-quote">"아름다움은 순간 사이의 고요함에서 발견됩니다. 우리의 디자인은 당신의 삶 속에 스며들어, 오직 의도와 우아함의 느낌만을 남기고자 합니다."</p>
+
+      <button type="button" class="btn btn-solid" id="studioInquiryBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+        스튜디오 문의하기
+      </button>
+    </div>
+  </div>
+</section>
+</section>
+<section class="page-view" data-view="about" id="view-about">
+<!-- ================= HERO (상단부 — 여성 모델 5장 슬라이더) ================= -->
+<section class="hero" data-hero data-interval="5500" id="hero-about">
+  <div class="hero-slides">
+    <div class="hero-slide is-active pan-right">
+      <img src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 뷰티 모델 화보 01">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1770301410072-f6ef6dad65b2?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 골드 캡 향수 보틀 에디토리얼">
+    </div>
+    <div class="hero-slide pan-center">
+      <img src="https://images.unsplash.com/photo-1581182815808-b6eb627a8798?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 뷰티 모델 화보 03">
+    </div>
+    <div class="hero-slide pan-right">
+      <img src="https://images.unsplash.com/photo-1754578645612-850d520385a8?auto=format&fit=crop&w=1920&q=80" alt="골드 실크 위에 놓인 ETHEREAL 향수 보틀">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1498843053639-170ff2122f35?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 뷰티 모델 화보 05">
+    </div>
+  </div>
+  <div class="hero-shine"></div>
+  <div class="hero-burst"></div>
+  <div class="hero-flash"></div>
+
+  <div class="hero-content container">
+    <p class="eyebrow">브랜드 이야기</p>
+    <h1 class="hero-title">본연의 결을 따라,<br><em>에테리얼</em>이 되다</h1>
+    <div class="hero-gold-rule"></div>
+    <p class="hero-desc">우리는 잠깐의 유행이 아닌, 시간이 흘러도 변치 않는 본질의 아름다움을 이야기합니다. 절제된 처방과 정제된 시각으로 완성한 에테리얼의 세계로 초대합니다.</p>
+    <div class="hero-actions">
+      <button type="button" class="btn btn-solid"
+        data-modal-eyebrow="브랜드 철학"
+        data-modal-title="의도적인 아름다움을 만나보세요"
+        data-modal-body="우리는 아름다움이 우연이 아닌, 철저한 의도에서 비롯되어야 한다고 믿습니다. 에테리얼은 단순한 스킨케어를 넘어 삶의 균형과 고요를 제안하는 큐레이션입니다."
+        data-modal-cta-text="철학 자세히 보기"
+        data-modal-cta-href="#philosophy-about">브랜드 철학 보기</button>
+      <button type="button" class="btn btn-ghost-light"
+        data-modal-eyebrow="컬렉션"
+        data-modal-title="시즌 컬렉션을 미리 만나보세요"
+        data-modal-body="엘리멘탈 미스트부터 나이트 리페어 컴플렉스까지, 이번 시즌 에테리얼이 제안하는 다섯 가지 시그니처 제품을 큐레이션했습니다."
+        data-modal-cta-text="컬렉션으로 이동"
+        data-modal-cta-href="#!home:curation">컬렉션 살펴보기</button>
+    </div>
+  </div>
+
+  <div class="hero-foot container">
+    <div class="hero-progress" role="tablist" aria-label="슬라이드 진행">
+      <button class="hero-dot is-active" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+    </div>
+    <div class="hero-count"><span class="hero-count-current">01</span> / 05</div>
+    <div class="hero-nav-btns">
+      <button class="hero-arrow prev" type="button" aria-label="이전 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero-arrow next" type="button" aria-label="다음 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRAND INTRO ================= -->
+<section class="brand-intro" id="philosophy-about">
+  <div class="container">
+    <p class="eyebrow">브랜드 철학</p>
+    <h1>의도적인 아름다움, 절제된 럭셔리</h1>
+    <p>우리는 아름다움이 우연이 아닌, 철저한 의도에서 비롯되어야 한다고 믿습니다. 에테리얼은 단순한 스킨케어를 넘어 삶의 균형과 고요를 제안하는 큐레이션 입니다.</p>
+    <a href="#essence" class="essence-link">
+      에센스 살펴보기
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="12" y1="4" x2="12" y2="20"/><polyline points="6 14 12 20 18 14"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= ESSENCE VISUAL (하단부 — 여성 모델 5장 슬라이더) ================= -->
+<section class="hero essence" data-hero data-interval="5000" id="essence">
+  <div class="hero-slides">
+    <div class="hero-slide is-active pan-left">
+      <img src="https://images.unsplash.com/photo-1605463967516-b73a52062ab0?auto=format&fit=crop&w=1920&q=80" alt="화이트 텍스타일 위 골드 향수 보틀">
+    </div>
+    <div class="hero-slide pan-right">
+      <img src="https://images.unsplash.com/photo-1609357912334-e96886c0212b?auto=format&fit=crop&w=1920&q=80" alt="Pure Beauty, Ethereal You 화보 02">
+    </div>
+    <div class="hero-slide pan-center">
+      <img src="https://images.unsplash.com/photo-1680503504111-1bbc7fc2103e?auto=format&fit=crop&w=1920&q=80" alt="페데스탈 위에 놓인 ETHEREAL 향수 보틀">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&w=1920&q=80" alt="Pure Beauty, Ethereal You 화보 04">
+    </div>
+    <div class="hero-slide pan-right">
+      <img src="https://images.unsplash.com/photo-1739190940453-20900e9d18fb?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 향수 보틀 클로즈업">
+    </div>
+  </div>
+  <div class="hero-shine"></div>
+  <div class="hero-burst"></div>
+  <div class="hero-flash"></div>
+
+  <div class="hero-content container">
+    <span class="wordmark">Ethereal</span>
+    <span class="essence-tag">순수한 아름다움, 그대로의 당신</span>
+    <p class="essence-desc">본연의 아름다움을 깨우는 순수한 루틴. 매일 아침, 가장 나다운 얼굴을 만나는 시간.</p>
+  </div>
+
+  <div class="hero-foot container">
+    <div class="hero-progress" role="tablist" aria-label="슬라이드 진행">
+      <button class="hero-dot is-active" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+    </div>
+    <div class="hero-count"><span class="hero-count-current">01</span> / 05</div>
+    <div class="hero-nav-btns">
+      <button class="hero-arrow prev" type="button" aria-label="이전 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero-arrow next" type="button" aria-label="다음 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORIGIN ================= -->
+<section class="origin">
+  <div class="container">
+    <div class="origin-head reveal">
+      <span class="origin-index">1. 기원</span>
+      <h2>순수의 정제, 시각의 미학</h2>
+    </div>
+
+    <div class="origin-text reveal">
+      <p>알프스의 야생 식물부터 프랑스 그라스의 허브까지, 우리는 세계 곳곳의 청정 지역에서 최상의 원료를 직접 선별합니다. 단순한 추출이 아닌, 72시간의 저온 숙성을 통해 원료 본연의 에너지를 손상 없이 담아내는 과정을 거칩니다.</p>
+
+      <ul class="origin-list">
+        <li>
+          <span class="num">01</span>
+          <div>
+            <h4>윤리적 수급</h4>
+            <p>자연의 자생력을 해치지 않는 지속 가능한 채취 방식을 고수합니다.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <div>
+            <h4>고도화된 정제</h4>
+            <p>전통의 지혜와 현대의 과학을 결합하여 불순물을 제로에 가깝게 걸러냅니다.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="origin-gallery reveal-stagger">
+        <article class="origin-card">
+          <img src="https://images.unsplash.com/photo-1595425959632-34f2822322ce?auto=format&fit=crop&w=700&q=80" alt="알프스 야생 정원">
+          <div class="origin-frame"></div>
+          <span class="origin-num">01</span>
+          <div class="origin-caption">
+            <h5>알프스 야생 정원</h5>
+            <p>해발 2,000m 청정 고지대에서 자란 자생 식물을 손으로 직접 채집합니다.</p>
+          </div>
+        </article>
+
+        <article class="origin-card">
+          <img src="https://images.unsplash.com/photo-1615108395437-df128ad79e80?auto=format&fit=crop&w=700&q=80" alt="프랑스 그라스 허브밭">
+          <div class="origin-frame"></div>
+          <span class="origin-num">02</span>
+          <div class="origin-caption">
+            <h5>그라스 허브밭</h5>
+            <p>세계적인 조향의 도시, 프랑스 그라스의 정원에서 허브를 선별합니다.</p>
+          </div>
+        </article>
+
+        <article class="origin-card">
+          <img src="https://images.unsplash.com/photo-1543422655-ac1c6ca993ed?auto=format&fit=crop&w=700&q=80" alt="72시간 저온 숙성">
+          <div class="origin-frame"></div>
+          <span class="origin-num">03</span>
+          <div class="origin-caption">
+            <h5>72시간 저온 숙성</h5>
+            <p>낮은 온도에서 긴 시간 머물게 하여 원료 본연의 생기를 지킵니다.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHIVE STUDIO ================= -->
+<section class="archive-note">
+  <div class="container">
+    <div class="archive-visual reveal">
+      <img src="https://images.unsplash.com/photo-1751131964776-57e3cbca0a14?auto=format&fit=crop&w=1200&q=80" alt="ETHEREAL 아카이브 스튜디오 제품 컬렉션">
+      <div class="visual-frame"></div>
+    </div>
+
+    <div class="archive-body reveal">
+      <p class="eyebrow">아카이브 스튜디오</p>
+      <h2>생각이 머무는 곳</h2>
+      <blockquote>"아름다움은 순간 사이의 고요함에서 발견됩니다. 우리의 디자인은 당신의 삶 속에 스며들어 오직 의도와 우아함의 느낌만을 남기고자 합니다."</blockquote>
+      <cite>— Helena Aris, Creative Lead</cite>
+    </div>
+  </div>
+</section>
+</section>
+<section class="page-view" data-view="store" id="view-store">
+<!-- ================= HERO (부티크 인테리어 5장 슬라이더) ================= -->
+<section class="hero" data-hero data-interval="5500" id="hero-store">
+  <div class="hero-slides">
+    <div class="hero-slide is-active pan-right">
+      <img src="https://images.unsplash.com/photo-1769981287706-0a300ee2fe69?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 매장에 진열된 향수 컬렉션">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1572533177115-5bea803c0f49?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 부티크 향수 보틀과 패키지">
+    </div>
+    <div class="hero-slide pan-center">
+      <img src="https://images.unsplash.com/photo-1615160460367-dcccd27e11ad?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 레드 골드 향수 보틀">
+    </div>
+    <div class="hero-slide pan-right">
+      <img src="https://images.unsplash.com/photo-1770301410072-f6ef6dad65b2?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 골드 캡 향수 보틀 에디토리얼">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1680503504111-1bbc7fc2103e?auto=format&fit=crop&w=1920&q=80" alt="페데스탈 위에 놓인 ETHEREAL 향수 보틀">
+    </div>
+  </div>
+  <div class="hero-shine"></div>
+  <div class="hero-burst"></div>
+  <div class="hero-flash"></div>
+
+  <div class="hero-content container">
+    <p class="eyebrow">스토어</p>
+    <h1 class="hero-title">공간에 스며든<br><em>에테리얼</em>의 시간</h1>
+    <div class="hero-gold-rule"></div>
+    <p class="hero-desc">향과 질감, 빛까지 세심하게 설계한 공간에서 에테리얼의 세계를 직접 경험해보세요. 전국 플래그십과 편집 매장에서 만나실 수 있습니다.</p>
+    <div class="hero-actions">
+      <button type="button" class="btn btn-solid"
+        data-modal-eyebrow="매장 찾기"
+        data-modal-title="가까운 매장을 확인해보세요"
+        data-modal-body="청담 플래그십부터 제주 애월 쇼룸까지, 전국 5개 매장의 위치와 영업시간을 지도에서 한눈에 확인하실 수 있습니다."
+        data-modal-cta-text="지도에서 보기"
+        data-modal-cta-href="#locator">매장 찾기</button>
+      <button type="button" class="btn btn-ghost-light"
+        data-modal-eyebrow="플래그십"
+        data-modal-title="청담, 에테리얼의 첫 번째 공간"
+        data-modal-body="브랜드의 모든 컬렉션과 시그니처 서비스를 한자리에서 만날 수 있는 첫 번째 플래그십 부티크. 프라이빗 컨설팅 룸과 시향 라운지를 함께 운영합니다."
+        data-modal-cta-text="플래그십 자세히 보기"
+        data-modal-cta-href="#flagship">플래그십 보기</button>
+    </div>
+  </div>
+
+  <div class="hero-foot container">
+    <div class="hero-progress" role="tablist" aria-label="슬라이드 진행">
+      <button class="hero-dot is-active" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+    </div>
+    <div class="hero-count"><span class="hero-count-current">01</span> / 05</div>
+    <div class="hero-nav-btns">
+      <button class="hero-arrow prev" type="button" aria-label="이전 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero-arrow next" type="button" aria-label="다음 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORE INTRO ================= -->
+<section class="brand-intro">
+  <div class="container">
+    <p class="eyebrow">매장 안내</p>
+    <h1>머무는 순간이 곧, 브랜드의 언어</h1>
+    <p>에테리얼의 매장은 단순한 판매 공간이 아닌, 브랜드의 철학을 오감으로 경험하는 곳입니다. 절제된 소재와 은은한 조도, 시그니처 향이 어우러진 공간에서 나만의 루틴을 찾아보세요.</p>
+    <a href="#flagship" class="essence-link">
+      플래그십 살펴보기
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="12" y1="4" x2="12" y2="20"/><polyline points="6 14 12 20 18 14"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FLAGSHIP BANNER ================= -->
+<section class="flagship" id="flagship">
+  <img src="https://images.unsplash.com/photo-1605463967516-b73a52062ab0?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 청담 플래그십 스토어 향수 컬렉션">
+  <div class="flagship-content">
+    <p class="eyebrow">플래그십</p>
+    <h2>청담, 에테리얼의 첫 번째 공간</h2>
+    <p>브랜드의 모든 컬렉션과 시그니처 서비스를 한자리에서 만날 수 있는 첫 번째 플래그십 부티크. 프라이빗 컨설팅 룸과 시향 라운지를 함께 운영합니다.</p>
+    <a href="#locator" class="btn btn-ghost-light">위치 확인하기</a>
+  </div>
+</section>
+
+<!-- ================= STORE LOCATOR ================= -->
+<section class="store-locator" id="locator">
+  <div class="container">
+    <div class="store-locator-head reveal">
+      <p class="eyebrow">매장 찾기</p>
+      <h2>가까운 매장을 찾아보세요</h2>
+
+      <div class="store-filter-tabs">
+        <button type="button" class="is-active" data-store-filter="all">전체</button>
+        <button type="button" data-store-filter="seoul">서울</button>
+        <button type="button" data-store-filter="busan">부산</button>
+        <button type="button" data-store-filter="jeju">제주</button>
+      </div>
+    </div>
+
+    <div class="store-layout">
+      <div class="store-list reveal-stagger">
+        <article class="store-card" data-store-region="seoul" data-store-card="0">
+          <span class="store-index">01</span>
+          <div>
+            <span class="store-tag">플래그십</span>
+            <h3>청담 플래그십</h3>
+            <address>서울 강남구 압구정로 452</address>
+            <p class="store-hours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              10:00 – 20:00 · 연중무휴
+            </p>
+          </div>
+          <span class="store-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+
+        </article>
+
+        <article class="store-card" data-store-region="seoul" data-store-card="1">
+          <span class="store-index">02</span>
+          <div>
+            <span class="store-tag">백화점</span>
+            <h3>더현대 서울</h3>
+            <address>서울 영등포구 여의대로 108</address>
+            <p class="store-hours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              10:30 – 20:00
+            </p>
+          </div>
+          <span class="store-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+
+        </article>
+
+        <article class="store-card" data-store-region="seoul" data-store-card="2">
+          <span class="store-index">03</span>
+          <div>
+            <span class="store-tag">백화점</span>
+            <h3>롯데 에비뉴엘 잠실</h3>
+            <address>서울 송파구 올림픽로 240</address>
+            <p class="store-hours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              10:30 – 20:00
+            </p>
+          </div>
+          <span class="store-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+
+        </article>
+
+        <article class="store-card" data-store-region="busan" data-store-card="3">
+          <span class="store-index">04</span>
+          <div>
+            <span class="store-tag">백화점</span>
+            <h3>신세계 센텀시티</h3>
+            <address>부산 해운대구 센텀남대로 35</address>
+            <p class="store-hours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              10:30 – 20:00
+            </p>
+          </div>
+          <span class="store-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+
+        </article>
+
+        <article class="store-card" data-store-region="jeju" data-store-card="4">
+          <span class="store-index">05</span>
+          <div>
+            <span class="store-tag">쇼룸</span>
+            <h3>제주 애월 쇼룸</h3>
+            <address>제주 제주시 애월읍 애월로 129</address>
+            <p class="store-hours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              11:00 – 19:00 · 매주 화요일 휴무
+            </p>
+          </div>
+          <span class="store-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+
+        </article>
+      </div>
+
+      <div class="store-map-wrap reveal">
+        <div id="store-map"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+<section class="page-view" data-view="journal" id="view-journal">
+<!-- ================= HERO (에디토리얼 플랫레이 5장 슬라이더) ================= -->
+<section class="hero" data-hero data-interval="5500" id="hero-journal">
+  <div class="hero-slides">
+    <div class="hero-slide is-active pan-right">
+      <img src="https://images.unsplash.com/photo-1670201202293-1d17e8a2f84b?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 뷰티 모델 화보">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1598634222670-87c5f558119c?auto=format&fit=crop&w=1920&q=80" alt="블랙 배경의 ETHEREAL 향수 보틀">
+    </div>
+    <div class="hero-slide pan-center">
+      <img src="https://images.unsplash.com/photo-1581182786510-168e6bc0013d?auto=format&fit=crop&w=1920&q=80" alt="ETHEREAL 뷰티 모델 화보">
+    </div>
+    <div class="hero-slide pan-right">
+      <img src="https://images.unsplash.com/photo-1627933234009-0f5ce6eb4e3a?auto=format&fit=crop&w=1920&q=80" alt="워터 위 골드 블랙 ETHEREAL 향수 보틀">
+    </div>
+    <div class="hero-slide pan-left">
+      <img src="https://images.unsplash.com/photo-1608721279136-cd41b752fa41?auto=format&fit=crop&w=1920&q=80" alt="핑크 조명 아래 ETHEREAL 향수 보틀">
+    </div>
+  </div>
+  <div class="hero-shine"></div>
+  <div class="hero-burst"></div>
+  <div class="hero-flash"></div>
+
+  <div class="hero-content container">
+    <p class="eyebrow">저널</p>
+    <h1 class="hero-title">기록으로 남는<br><em>아름다움</em>의 결</h1>
+    <div class="hero-gold-rule"></div>
+    <p class="hero-desc">피부 과학, 브랜드의 뒷이야기, 그리고 일상의 루틴까지. 에테리얼이 발견한 아름다움의 순간들을 기록합니다.</p>
+    <div class="hero-actions">
+      <button type="button" class="btn btn-solid"
+        data-modal-eyebrow="전체 스토리"
+        data-modal-title="에테리얼의 이야기를 읽어보세요"
+        data-modal-body="뷰티 인사이트, 브랜드 스토리, 라이프스타일, 인터뷰까지. 에테리얼 저널이 기록한 여섯 편의 아티클을 지금 만나보세요."
+        data-modal-cta-text="아티클 목록으로 이동"
+        data-modal-cta-href="#grid">아티클 보기</button>
+      <button type="button" class="btn btn-ghost-light"
+        data-modal-eyebrow="에디터스 픽"
+        data-modal-title="느린 아침이 피부에 남기는 것"
+        data-modal-body="서두르지 않는 아침 루틴이 피부 컨디션에 미치는 영향을 과학적으로 짚어봅니다. 코르티솔 리듬과 스킨케어 흡수율의 상관관계, 그리고 에테리얼이 제안하는 5분 모닝 리추얼까지."
+        data-modal-cta-text="에디터스 픽으로 이동"
+        data-modal-cta-href="#featured">에디터스 픽</button>
+    </div>
+  </div>
+
+  <div class="hero-foot container">
+    <div class="hero-progress" role="tablist" aria-label="슬라이드 진행">
+      <button class="hero-dot is-active" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+      <button class="hero-dot" type="button"><span></span></button>
+    </div>
+    <div class="hero-count"><span class="hero-count-current">01</span> / 05</div>
+    <div class="hero-nav-btns">
+      <button class="hero-arrow prev" type="button" aria-label="이전 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero-arrow next" type="button" aria-label="다음 이미지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED ARTICLE ================= -->
+<section class="featured-article" id="featured">
+  <div class="container">
+    <div class="featured-visual reveal">
+      <span class="featured-tag">에디터스 픽</span>
+      <img src="https://images.unsplash.com/photo-1653784097013-786a8965ea3b?auto=format&fit=crop&w=1200&q=80" alt="느린 아침이 피부에 남기는 것">
+      <div class="visual-frame"></div>
+    </div>
+
+    <div class="featured-body reveal">
+      <p class="eyebrow">뷰티 인사이트</p>
+      <h2>느린 아침이 피부에 남기는 것</h2>
+      <div class="featured-meta">
+        <span>에디터 아리스 리</span>
+        <span class="dot"></span>
+        <span>2026.06.18</span>
+        <span class="dot"></span>
+        <span>5분 읽기</span>
+      </div>
+      <p>서두르지 않는 아침 루틴이 피부 컨디션에 미치는 영향을 과학적으로 짚어봅니다. 코르티솔 리듬과 스킨케어 흡수율의 상관관계, 그리고 에테리얼이 제안하는 5분 모닝 리추얼까지.</p>
+      <a href="#" class="link-underline">전체 읽기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNAL GRID ================= -->
+<section class="journal-grid-section" id="grid">
+  <div class="container">
+    <div class="journal-head reveal">
+      <p class="eyebrow">전체 스토리</p>
+      <h2>에테리얼의 이야기</h2>
+
+      <div class="store-filter-tabs">
+        <button type="button" class="is-active" data-journal-filter="all">전체</button>
+        <button type="button" data-journal-filter="beauty">뷰티 인사이트</button>
+        <button type="button" data-journal-filter="brand">브랜드 스토리</button>
+        <button type="button" data-journal-filter="lifestyle">라이프스타일</button>
+        <button type="button" data-journal-filter="interview">인터뷰</button>
+      </div>
+    </div>
+
+    <div class="journal-grid reveal-stagger">
+      <article class="journal-card" data-journal-category="beauty">
+        <div class="journal-thumb">
+          <img src="https://images.unsplash.com/photo-1643168343279-3f93c2e592ef?auto=format&fit=crop&w=800&q=80" alt="레이어링의 순서가 결과를 바꾼다">
+          <span class="journal-cat">뷰티 인사이트</span>
+          <span class="journal-read">
+            자세히 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="journal-info">
+          <span class="journal-date">2026.06.11</span>
+          <h3>레이어링의 순서가 결과를 바꾼다</h3>
+          <p>같은 제품도 바르는 순서에 따라 흡수율이 달라집니다. 에테리얼 라인의 올바른 레이어링 가이드.</p>
+        </div>
+      </article>
+
+      <article class="journal-card" data-journal-category="brand">
+        <div class="journal-thumb">
+          <img src="https://images.unsplash.com/photo-1629380108599-ea06489d66f5?auto=format&fit=crop&w=800&q=80" alt="그라스에서 온 편지">
+          <span class="journal-cat">브랜드 스토리</span>
+          <span class="journal-read">
+            자세히 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="journal-info">
+          <span class="journal-date">2026.05.29</span>
+          <h3>그라스에서 온 편지</h3>
+          <p>조향의 도시, 프랑스 그라스의 농장에서 원료를 선별하는 에테리얼 팀의 3일간의 기록.</p>
+        </div>
+      </article>
+
+      <article class="journal-card" data-journal-category="lifestyle">
+        <div class="journal-thumb">
+          <img src="https://images.unsplash.com/photo-1629732047356-30c7e14e712b?auto=format&fit=crop&w=800&q=80" alt="비우는 루틴, 미니멀 스킨케어">
+          <span class="journal-cat">라이프스타일</span>
+          <span class="journal-read">
+            자세히 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="journal-info">
+          <span class="journal-date">2026.05.14</span>
+          <h3>비우는 루틴, 미니멀 스킨케어</h3>
+          <p>제품 수를 줄이고도 만족스러운 피부를 유지하는 법. 에디터가 직접 3주간 실천해봤습니다.</p>
+        </div>
+      </article>
+
+      <article class="journal-card" data-journal-category="interview">
+        <div class="journal-thumb">
+          <img src="https://images.unsplash.com/photo-1585832622886-272fb3a927e0?auto=format&fit=crop&w=800&q=80" alt="조향사 클레어와의 대화">
+          <span class="journal-cat">인터뷰</span>
+          <span class="journal-read">
+            자세히 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="journal-info">
+          <span class="journal-date">2026.04.30</span>
+          <h3>조향사 클레어와의 대화</h3>
+          <p>에테리얼의 시그니처 향을 만든 조향사 클레어 뒤부아를 만나 향의 탄생 과정을 물었습니다.</p>
+        </div>
+      </article>
+
+      <article class="journal-card" data-journal-category="beauty">
+        <div class="journal-thumb">
+          <img src="https://images.unsplash.com/photo-1575330933415-cea1e7ce53eb?auto=format&fit=crop&w=800&q=80" alt="성분표 읽는 법, 세 가지 원칙">
+          <span class="journal-cat">뷰티 인사이트</span>
+          <span class="journal-read">
+            자세히 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="journal-info">
+          <span class="journal-date">2026.04.09</span>
+          <h3>성분표 읽는 법, 세 가지 원칙</h3>
+          <p>복잡해 보이는 전성분표, 세 가지 원칙만 알면 누구나 현명한 소비자가 될 수 있습니다.</p>
+        </div>
+      </article>
+
+      <article class="journal-card" data-journal-category="brand">
+        <div class="journal-thumb">
+          <img src="https://images.unsplash.com/photo-1748543668699-a8a9398e9161?auto=format&fit=crop&w=800&q=80" alt="지속가능한 패키지를 향한 여정">
+          <span class="journal-cat">브랜드 스토리</span>
+          <span class="journal-read">
+            자세히 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="journal-info">
+          <span class="journal-date">2026.03.22</span>
+          <h3>지속가능한 패키지를 향한 여정</h3>
+          <p>유리와 재생 알루미늄으로 전환하기까지, 에테리얼 패키지 디자인팀의 2년간의 고민.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</section>
+<section class="page-view" data-view="checkout" id="view-checkout">
+<main class="checkout-page">
+  <div class="container">
+
+    <!-- ================= 주문/결제 폼 ================= -->
+    <div id="checkoutForm">
+      <div class="checkout-head">
+        <p class="eyebrow">Checkout</p>
+        <h1>주문 / 결제</h1>
+        <div class="checkout-steps">
+          <span class="step is-active">01 장바구니</span>
+          <span class="sep">—</span>
+          <span class="step is-active">02 배송 정보</span>
+          <span class="sep">—</span>
+          <span class="step is-active">03 결제 수단</span>
+        </div>
+      </div>
+
+      <div class="checkout-grid">
+        <div class="checkout-main" id="checkoutMain">
+
+          <!-- 주문 상품 -->
+          <section class="checkout-block">
+            <h2><span class="num">1</span>주문 상품</h2>
+            <div class="cart-items" id="cartItemsList"></div>
+          </section>
+
+          <!-- 배송 정보 -->
+          <section class="checkout-block">
+            <h2><span class="num">2</span>배송 정보</h2>
+            <form class="checkout-form" id="shippingForm" novalidate>
+              <div class="field">
+                <label for="recvName">받는 분</label>
+                <input type="text" id="recvName" name="recvName" placeholder="이름" required>
+                <span class="field-error" data-error-for="recvName"></span>
+              </div>
+              <div class="field">
+                <label for="recvPhone">연락처</label>
+                <input type="tel" id="recvPhone" name="recvPhone" placeholder="010-0000-0000" required>
+                <span class="field-error" data-error-for="recvPhone"></span>
+              </div>
+              <div class="field full">
+                <label for="recvAddress">주소</label>
+                <input type="text" id="recvAddress" name="recvAddress" placeholder="도로명 주소" required>
+                <span class="field-error" data-error-for="recvAddress"></span>
+              </div>
+              <div class="field full">
+                <label for="recvAddressDetail">상세 주소</label>
+                <input type="text" id="recvAddressDetail" name="recvAddressDetail" placeholder="동 / 호수 등 상세 주소">
+              </div>
+              <div class="field full">
+                <label for="recvRequest">배송 요청 사항</label>
+                <input type="text" id="recvRequest" name="recvRequest" placeholder="예: 부재 시 경비실에 맡겨주세요">
+              </div>
+            </form>
+          </section>
+
+          <!-- 결제 수단 -->
+          <section class="checkout-block">
+            <h2><span class="num">3</span>결제 수단</h2>
+
+            <div class="pay-methods" role="tablist">
+              <button type="button" class="pay-method is-active" data-pay-method="card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                신용/체크카드
+              </button>
+              <button type="button" class="pay-method" data-pay-method="kakao">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3C6.5 3 2 6.5 2 11c0 2.7 1.7 5.1 4.3 6.6-.2.7-.7 2.6-.8 3-.1.4.2.4.4.3.2-.1 2.6-1.8 3.6-2.5.8.1 1.6.2 2.5.2 5.5 0 10-3.5 10-8S17.5 3 12 3z"/></svg>
+                카카오페이
+              </button>
+              <button type="button" class="pay-method" data-pay-method="bank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M10 10v9M14 10v9M19 10v9"/><path d="M3 19h18"/></svg>
+                무통장 입금
+              </button>
+            </div>
+
+            <div class="pay-panel is-active" id="payPanelCard">
+              <div class="field full">
+                <label for="cardNumber">카드 번호</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="0000 - 0000 - 0000 - 0000" inputmode="numeric" maxlength="19">
+                <span class="field-error" data-error-for="cardNumber"></span>
+              </div>
+              <div class="field">
+                <label for="cardExpiry">유효기간 (MM/YY)</label>
+                <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY" inputmode="numeric" maxlength="5">
+                <span class="field-error" data-error-for="cardExpiry"></span>
+              </div>
+              <div class="field">
+                <label for="cardCvc">CVC</label>
+                <input type="text" id="cardCvc" name="cardCvc" placeholder="000" inputmode="numeric" maxlength="3">
+                <span class="field-error" data-error-for="cardCvc"></span>
+              </div>
+              <div class="field full">
+                <label for="cardInstallment">할부 개월</label>
+                <select id="cardInstallment" name="cardInstallment">
+                  <option value="0">일시불</option>
+                  <option value="2">2개월</option>
+                  <option value="3">3개월</option>
+                  <option value="6">6개월</option>
+                  <option value="12">12개월</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="pay-panel" id="payPanelKakao">
+              <p class="pay-note" style="grid-column:1/-1;">결제하기 버튼을 누르면 카카오페이 앱으로 연결되어 간편하게 결제를 완료할 수 있습니다. (데모 화면에서는 결제 시뮬레이션으로 진행됩니다.)</p>
+            </div>
+
+            <div class="pay-panel" id="payPanelBank">
+              <p class="pay-note" style="grid-column:1/-1;">주문 후 3일 이내 아래 계좌로 입금해주세요. 입금자명은 주문자명과 동일하게 입력해주시기 바랍니다.<br><br>
+              <strong>국민은행 123456-04-789012 (예금주: ㈜에테리얼)</strong></p>
+            </div>
+          </section>
+
+          <!-- 약관 동의 -->
+          <section class="checkout-block">
+            <h2><span class="num">4</span>약관 동의</h2>
+            <div class="checkout-agree">
+              <label class="agree-row all">
+                <input type="checkbox" id="agreeAll">전체 약관에 동의합니다
+              </label>
+              <label class="agree-row">
+                <input type="checkbox" id="agreeTerms" required>[필수] 구매 조건 및 이용약관 안내에 동의
+              </label>
+              <label class="agree-row">
+                <input type="checkbox" id="agreePrivacy" required>[필수] 개인정보 수집 및 이용 동의
+              </label>
+              <label class="agree-row">
+                <input type="checkbox" id="agreeMarketing">[선택] 마케팅 정보 수신 동의
+              </label>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- 주문 요약 -->
+        <aside class="checkout-summary" id="checkoutSummary">
+          <h2>결제 금액</h2>
+
+          <div class="coupon-row">
+            <input type="text" id="couponInput" placeholder="쿠폰 코드 입력 (예: ETHEREAL10)">
+            <button type="button" id="couponApplyBtn" class="link-underline">적용</button>
+          </div>
+          <p class="coupon-applied" id="couponMessage"></p>
+
+          <div class="summary-row">
+            <span>상품 금액</span>
+            <span id="summarySubtotal">0원</span>
+          </div>
+          <div class="summary-row">
+            <span>배송비</span>
+            <span id="summaryShipping">0원</span>
+          </div>
+          <div class="summary-row discount" id="summaryDiscountRow" style="display:none;">
+            <span>쿠폰 할인</span>
+            <span id="summaryDiscount">0원</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-total">
+            <span>총 결제 금액</span>
+            <strong id="summaryTotal">0원</strong>
+          </div>
+
+          <button type="button" class="btn btn-solid" id="payButton" disabled>결제하기</button>
+
+          <p class="summary-secure">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            SSL 암호화로 안전하게 보호되는 결제입니다
+          </p>
+        </aside>
+      </div>
+
+      <div class="checkout-empty" id="checkoutEmptyState" style="display:none;">
+        <p class="eyebrow" style="justify-content:center;">Empty Cart</p>
+        <h2 class="serif" style="font-size:24px; margin-bottom:14px;">장바구니가 비어있습니다</h2>
+        <p>마음에 드는 제품을 담고 다시 방문해주세요.</p>
+        <a href="#!home:curation" class="btn btn-solid">컬렉션 보러 가기</a>
+      </div>
+    </div>
+
+    <!-- ================= 결제 완료 화면 ================= -->
+    <section class="checkout-success" id="checkoutSuccess">
+      <p class="eyebrow">Payment Complete</p>
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h1>결제가 완료되었습니다</h1>
+      <p>주문해 주셔서 감사합니다. 주문 확인 및 배송 안내는 입력하신 연락처로 순차 안내드립니다.</p>
+
+      <div class="success-order-box">
+        <div class="row"><span>주문 번호</span><span id="orderNumber">—</span></div>
+        <div class="row"><span>주문 일시</span><span id="orderDate">—</span></div>
+        <div class="row"><span>결제 수단</span><span id="orderPayMethod">—</span></div>
+        <div class="row"><span>받는 분</span><span id="orderReceiver">—</span></div>
+        <div class="row"><span>총 결제 금액</span><span id="orderTotal">—</span></div>
+      </div>
+
+      <div class="success-actions">
+        <a href="#!home" class="btn btn-solid">쇼핑 계속하기</a>
+        <a href="#!journal" class="btn btn-ghost-light" style="color: var(--color-ink); border-color: var(--color-ink);">저널 보러 가기</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#!home" class="logo">Ethereal</a>
+        <p>2024년부터 현대적인 럭셔리와 마음챙김의 아름다움의 본질을 큐레이션하고 있습니다.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>고객 센터</h5>
+        <ul>
+          <li><a href="#">개인정보 처리방침</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">배송 및 반품</a></li>
+          <li><a href="#">문의하기</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>소셜</h5>
+        <ul>
+          <li><a href="#">X</a></li>
+          <li><a href="#">페이스북</a></li>
+          <li><a href="#">인스타그램</a></li>
+          <li><a href="#">유튜브</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>뉴스레터 구독</h5>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="이메일 주소" required>
+          <button type="submit" aria-label="구독하기">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ETHEREAL. ALL RIGHTS RESERVED.</span>
+      <div class="payments">
+        <button type="button" class="payment-icon" aria-label="카드 결제 안내"
+          data-modal-eyebrow="결제 안내"
+          data-modal-title="신용 · 체크카드로 결제하기"
+          data-modal-body="국내 모든 신용·체크카드로 결제하실 수 있으며, 카드사에 따라 최대 12개월 무이자·부분 할부가 적용됩니다. 결제 페이지에서 원하시는 카드사와 할부 개월을 선택해 진행해주세요."
+          data-modal-cta-text="결제 페이지로 이동"
+          data-modal-cta-href="#!checkout">
+          <svg width="26" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </button>
+        <button type="button" class="payment-icon" aria-label="무통장 입금 안내"
+          data-modal-eyebrow="결제 안내"
+          data-modal-title="무통장 입금으로 결제하기"
+          data-modal-body="주문 후 3일 이내 아래 계좌로 입금해주시면 확인 후 배송이 시작됩니다. 입금자명은 주문자명과 동일하게 입력해주세요.<br><br><strong>국민은행 123456-04-789012 (예금주: (주)에테리얼)</strong>"
+          data-modal-cta-text="결제 페이지로 이동"
+          data-modal-cta-href="#!checkout">
+          <svg width="26" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="pay-processing" id="payProcessing">
+  <div class="spinner"></div>
+  <span>결제를 처리하고 있습니다…</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
